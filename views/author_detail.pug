@@ -1,0 +1,12 @@
+extends layout
+block content
+    h1 Author: #{author.name}
+    p #{author.dob} - #{author.dod}
+    div(style='padding:10px 0 0 10px;')
+        h4 Books
+        each val in books
+            dt
+                a(href=val.url) #{val.title}
+            dd #{val.summary}
+        else
+            p No book available of this Author
